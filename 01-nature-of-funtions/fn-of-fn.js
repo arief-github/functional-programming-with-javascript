@@ -26,6 +26,12 @@ forEach([1,2,3,4], function each(val) {
  */
 
 
+/**
+ * A function that returns a function which takes a string and returns it in uppercase.
+ *
+ * @return {Function} The inner function that converts the input string to uppercase.
+ */
+
 function foo() {
     return function inner(msg) {
         return msg.toUpperCase()
@@ -34,3 +40,16 @@ function foo() {
 
 let bar = foo()
 console.log(bar('hello'))
+
+
+function foo2() {
+    return bard(function inner(msg) {
+        return msg.toUpperCase()
+    })
+}
+
+function bard(func) {
+    return func("Hello!")
+}
+
+console.log(foo2())
